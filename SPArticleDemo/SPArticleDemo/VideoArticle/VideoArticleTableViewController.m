@@ -7,7 +7,7 @@
 //
 
 #import "VideoArticleTableViewController.h"
-#import "<#header#>"
+//#import "<#header#>"
 
 @interface VideoArticleTableViewController ()
 
@@ -52,7 +52,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCellIdentifier" forIndexPath:indexPath];
     if (indexPath.row == 0) {
         
-        cell.contentView addSubview:<#(UIView *)#>
+//        cell.contentView addSubview:<#(UIView *)#>
     }
     
     return cell;
