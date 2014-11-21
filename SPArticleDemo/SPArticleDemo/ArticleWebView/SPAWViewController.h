@@ -20,5 +20,5 @@
 @property (nonatomic, strong) NSString *liveURL;
 @property (nonatomic, assign) BOOL isVideoArticle;
 
-
+- (void)loadArticle;
 @end

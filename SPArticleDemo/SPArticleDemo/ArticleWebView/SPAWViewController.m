@@ -35,6 +35,9 @@
 
 - (void)loadArticle
 {
+    if (!self.urlParam) {
+        return;
+    }
     NSDictionary *paramDic = nil;
     //博客
     if ([self.typeParam isEqualToString:@"blog"]) {

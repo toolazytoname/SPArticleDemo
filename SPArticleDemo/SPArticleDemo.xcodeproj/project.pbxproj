@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445A179F1A1EE9E40031CD37 /* ArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 445A179E1A1EE9E40031CD37 /* ArticleTableViewController.m */; };
+		445A17A21A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 445A17A11A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m */; };
+		445A17A41A1F3F610031CD37 /* ArticleTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445A17A31A1F3F610031CD37 /* ArticleTitleTableViewCell.xib */; };
 		44942ECE1A1C75BB00281332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942ECD1A1C75BB00281332 /* main.m */; };
 		44942ED11A1C75BB00281332 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942ED01A1C75BB00281332 /* AppDelegate.m */; };
 		44942ED41A1C75BB00281332 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942ED31A1C75BB00281332 /* ViewController.m */; };
@@ -74,6 +77,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		445A179D1A1EE9E40031CD37 /* ArticleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewController.h; sourceTree = "<group>"; };
+		445A179E1A1EE9E40031CD37 /* ArticleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewController.m; sourceTree = "<group>"; };
+		445A17A01A1F3F2C0031CD37 /* ArticleTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTitleTableViewCell.h; sourceTree = "<group>"; };
+		445A17A11A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTitleTableViewCell.m; sourceTree = "<group>"; };
+		445A17A31A1F3F610031CD37 /* ArticleTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTitleTableViewCell.xib; sourceTree = "<group>"; };
 		44942EC81A1C75BB00281332 /* SPArticleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPArticleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44942ECC1A1C75BB00281332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44942ECD1A1C75BB00281332 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -289,6 +297,9 @@
 				44A4B17F1A1DF570007C6451 /* ArticleWebViewTableViewCell.h */,
 				44A4B1801A1DF570007C6451 /* ArticleWebViewTableViewCell.m */,
 				44A4B1821A1DF604007C6451 /* ArticleWebViewTableViewCell.xib */,
+				445A17A01A1F3F2C0031CD37 /* ArticleTitleTableViewCell.h */,
+				445A17A11A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m */,
+				445A17A31A1F3F610031CD37 /* ArticleTitleTableViewCell.xib */,
 			);
 			path = ArticleCells;
 			sourceTree = "<group>";
@@ -298,6 +309,8 @@
 			children = (
 				44A4B0A61A1DC1D9007C6451 /* ArticleViewController.h */,
 				44A4B0A71A1DC1D9007C6451 /* ArticleViewController.m */,
+				445A179D1A1EE9E40031CD37 /* ArticleTableViewController.h */,
+				445A179E1A1EE9E40031CD37 /* ArticleTableViewController.m */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -508,6 +521,7 @@
 				44942ED71A1C75BB00281332 /* Main.storyboard in Resources */,
 				44A4B1831A1DF604007C6451 /* ArticleWebViewTableViewCell.xib in Resources */,
 				44A4B0DE1A1DD26F007C6451 /* SPAWViewController.xib in Resources */,
+				445A17A41A1F3F610031CD37 /* ArticleTitleTableViewCell.xib in Resources */,
 				44942EDC1A1C75BB00281332 /* LaunchScreen.xib in Resources */,
 				44942ED91A1C75BB00281332 /* Images.xcassets in Resources */,
 				44A4B09E1A1DC1D2007C6451 /* VideoCommentTableViewCell.xib in Resources */,
@@ -551,6 +565,7 @@
 				44A4B14F1A1DD6A2007C6451 /* BaseDataRequest.m in Sources */,
 				44A4B16B1A1DD6A2007C6451 /* UIView+ITTAdditions.m in Sources */,
 				44A4B1651A1DD6A2007C6451 /* NSDictionary+Safe.m in Sources */,
+				445A17A21A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m in Sources */,
 				44A4B1471A1DD6A2007C6451 /* ASIAuthenticationDialog.m in Sources */,
 				44A4B09F1A1DC1D2007C6451 /* VideoDetailTableViewCell.m in Sources */,
 				44A4B09D1A1DC1D2007C6451 /* VideoCommentTableViewCell.m in Sources */,
@@ -559,6 +574,7 @@
 				44A4B1811A1DF570007C6451 /* ArticleWebViewTableViewCell.m in Sources */,
 				44942ED11A1C75BB00281332 /* AppDelegate.m in Sources */,
 				44A4B17C1A1DE062007C6451 /* OPArticleObject.m in Sources */,
+				445A179F1A1EE9E40031CD37 /* ArticleTableViewController.m in Sources */,
 				44942ECE1A1C75BB00281332 /* main.m in Sources */,
 				44A4B14A1A1DD6A2007C6451 /* ASIDownloadCache.m in Sources */,
 				44A4B0CA1A1DC28B007C6451 /* VideoArticleTableViewController.m in Sources */,

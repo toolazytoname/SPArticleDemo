@@ -20,7 +20,7 @@
     // Configure the view for the selected state
 }
 
--(void)updateCellWithModel:(id)Model
+-(void)updateCellWithModel:(id)model
 {
     
 }
@@ -32,4 +32,8 @@
     return self;
 }
 
+-(CGFloat)cellHeight
+{
+    return 0.0;
+}
 @end

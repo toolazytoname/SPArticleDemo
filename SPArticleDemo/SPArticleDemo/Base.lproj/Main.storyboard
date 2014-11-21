@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="1818" y="677"/>
         </scene>
-        <!--View Controller-->
+        <!--Article View Controller-->
         <scene sceneID="WLS-8Y-hyC">
             <objects>
-                <viewController id="kIW-kG-oab" sceneMemberID="viewController">
+                <viewController id="kIW-kG-oab" customClass="ArticleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q0E-iw-xUZ"/>
                         <viewControllerLayoutGuide type="bottom" id="3eX-hp-lvD"/>
@@ -126,6 +126,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5pW-m0-48D" secondAttribute="trailing" constant="-16" id="kZF-ft-suj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="articleTableView" destination="5pW-m0-48D" id="4ke-0b-J8C"/>
+                        <outlet property="view" destination="vXu-Od-CXQ" id="Rdl-2k-4ZX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJh-70-KAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

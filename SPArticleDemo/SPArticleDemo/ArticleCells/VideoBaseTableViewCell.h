@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface VideoBaseTableViewCell : UITableViewCell
--(void)updateCellWithModel:(id)Model;
+-(void)updateCellWithModel:(id)model;
 -(id)initWithFrame:(CGRect)frame;
+-(CGFloat)cellHeight;
 @end
