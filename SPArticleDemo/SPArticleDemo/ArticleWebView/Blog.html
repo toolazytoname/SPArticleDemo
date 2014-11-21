@@ -1,0 +1,437 @@
+<html>
+    <head>
+        <title>Article</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name = "format-detection" content = "telephone=no">
+        <!--style css-->
+        <style type="text/css">
+                body
+                {
+                    background-color:#F5F5F5;
+                    margin-top: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-bottom: 0px;
+                }
+
+                #title
+                {
+                    text-align:left;
+                    color:black;
+                    font-size:19px;
+                    font-weight:bolder;
+                    margin-bottom:10px;
+                    line-height:27px;
+                    font-family: SimHei;
+                }
+                #container
+                {
+                    margin-top: 13px;
+                    margin-left: 13px;
+                    margin-right: 13px;
+                    margin-bottom: 13px;
+                }
+                #blogpubdate
+                {
+                    text-align:left;
+                    color:#999999;
+                    font-size:12px;
+                    float:left;
+                    margin-bottom:10px;
+                    font-family: SimHei;
+                }
+                #createdate
+                {
+                    text-align:left;
+                    color:#999999;
+                    font-size:12px;
+                    float:left;
+                    margin-bottom:10px;
+                    font-family: SimHei;
+                }
+                #placeHolderforSubtitle
+                {
+                    height:25px;
+                }
+                #article
+                {
+                    clear:both;
+                    font-size:17px;
+                    line-height:27px;
+                    color:#333333;
+                    word-break: break-all;
+                    font-family: STXihei;
+                    
+                }
+                p
+                {
+                    margin-top:12px;
+                    margin-bottom:12px;
+                }
+                a
+                {
+                    color:#5683c1;
+                    text-decoration:none;
+                }
+                .placeholder
+                {
+                    background-repeat:no-repeat;
+                    background-position: center center;
+                    background-image:url('file:SPBGLogo.png');
+                    margin-bottom:13px;
+                    background-color:white;
+                }
+        
+        </style>
+        <!--global define-->
+        <script type="text/javascript">
+//                var clientType = "Android";
+                var clientType = "iOS";
+                var kSPWebActionPlayVideo = "playvideo";
+                var kSPWebActionShowAlbum = "showalbum";
+                var kSPWebActionShowImage = "showimage";
+                var kSPWebActionCustom = "custom";
+                var kSPWebActionReady = "ready";
+                var kSPWebActionLayoutFinished = "layoutfinished";
+                var kSPWebActionLayoutPlayer ="layoutplayer";
+                var kSPWebActionLayoutHeadImage = "layoutheadimage";
+                var kSPWebActionLayoutArticleImage = "layoutarticleimage";
+                var kSPWebActionPopTableImage = "poptableimage";
+                //过滤微博字段所用的正则表达式
+                var regex=/<a.*>\[微博]<\/a>/gi;
+                var videoImageID = "videoImage";
+                var marginleft = 13;
+                var contentImageMarginLeft = 15;
+                var heightDevideWidth = 168/300;
+                var clientWidthOfCurrentDevice;
+                if(clientType == "iOS")
+                {
+                    clientWidthOfCurrentDevice = document.documentElement.clientWidth;//取得浏览器页面可视区域的宽度
+                }
+        
+        </script>
+        <!--method-->
+        <script type = "text/javascript">
+                function onloadActionReady()
+                {
+                    sendToApp(kSPWebActionReady, 'def');
+                }
+                function bundleEventToArticleImage()
+                {
+                    var article = document.getElementById('article');
+                    var images = article.getElementsByTagName('img');
+                    for(var i=0;i<images.length;i++)
+                    {
+                        images[i].onload = resizeImage;
+                    }
+                }
+                function resizeImage()
+                {
+                    //set the image size
+                    var article = document.getElementById('article');
+                    var images = article.getElementsByTagName('img');
+                    for(var i=0;i<images.length;i++)
+                    {
+//                        images[i].onclick =  function(){alert("d")};
+                        images[i].onclick = function(){toArticleImg(this)};
+                        if(images[i].clientWidth < clientWidthOfCurrentDevice-contentImageMarginLeft*2)
+                        {
+                            continue;
+                        }
+                        images[i].style.width = clientWidthOfCurrentDevice-contentImageMarginLeft*2;
+                        images[i].style.height = 'auto';
+
+
+                    }
+                }
+                function changeArcherUrlValue()
+                {
+                    //change the url value
+                    var archers = document.getElementsByTagName('a');
+                    for(var i= 0;i<archers.length;i++)
+                    {
+                        archers[i].href = 'http://www.baidu.com';
+                    }
+                }
+                function resizeFirstParagraph()
+                {
+                    var firstParagraph = document.getElementsByTagName("p")[0];
+                    if(firstParagraph != undefined)
+                    {
+                        firstParagraph.style.marginTop = "0px";
+                    }
+                    
+                }
+                function setPageContent()
+                {
+                   
+                    bundleEventToArticleImage();
+                    resizeImage();
+//                    changeArcherUrlValue();
+                    resizeFirstParagraph();
+                }
+                function toVideo()
+                {
+                    var positionString =getPosttion(videoImageID);
+//                    alert("frame:"+positionString);
+                    sendToApp(kSPWebActionLayoutPlayer,positionString);
+                }
+                function toHDAlbum()
+                {
+                    sendToApp(kSPWebActionShowAlbum,"album");
+                }
+            
+                function toHeadImage()
+                {
+                    var headImageElement = document.getElementById("headImage");
+                    var images = headImageElement.getElementsByTagName('img');
+                    var headImagePosition = "";
+                    var splitString = "&"
+                    //返回用&分割的位置字符
+                    for(var i=0;i<images.length;i++)
+                    {
+                        headImagePosition += getPosttionByElement(images[i]) + splitString;
+                    }
+                    if(headImagePosition.lastIndexOf(splitString) == headImagePosition.length -1)
+                    {
+                        headImagePosition = headImagePosition.slice(0,headImagePosition.length -1);
+                    }
+                    sendToApp(kSPWebActionLayoutHeadImage,headImagePosition);
+                }
+                function toArticleImg(id)
+                {
+                    var positionString = getPosttionByElement(id);
+                    var url = id.src;
+                    var positionStringAndUrl = positionString + "&"  + url;
+                    sendToApp(kSPWebActionLayoutArticleImage,positionStringAndUrl);
+                }
+                function getPosttion(id)
+                {
+                    var offsets = document.getElementById(id).getBoundingClientRect();
+                    var top = offsets.top;
+                    var left = offsets.left;
+                    var width = document.getElementById(id).clientWidth;
+                    var height = document.getElementById(id).clientHeight;
+                    var positionString = "{{"+left+", "+top+"}, {"+width+", "+height+"}}";
+//                {{8, 88}, {300, 227}}
+//                    alert(positionString);
+                    return positionString;
+                }
+               function getPosttionByElement(id)
+               {
+                   var offsets = id.getBoundingClientRect();
+                   var top = offsets.top;
+                   var left = offsets.left;
+                   var width = id.clientWidth;
+                   var height = id.clientHeight;
+                   var positionString = "{{"+left+", "+top+"}, {"+width+", "+height+"}}";
+                   //                {{8, 88}, {300, 227}}
+                   //                    alert(positionString);
+                   return positionString;
+               }
+                var sendToApp = function(_key, _val) {
+                    
+                    if(clientType == "iOS")
+                    {
+                        var iframe = document.createElement("IFRAME");
+                        iframe.setAttribute("src", _key + ":##sendToApp##" + _val);
+                        document.documentElement.appendChild(iframe);
+                        iframe.parentNode.removeChild(iframe);
+                        iframe = null;
+                    }
+                    else if(clientType == "Android")
+                    {
+                        window.sendApp.getAction(_key + ":##sendToApp##" + _val);
+                    }
+                }
+                function addBackgroundColor(id)
+                {
+                    //                    alert(id);
+                    var img = document.getElementById(id);
+                    img.style.background = "#F5F5F5"
+                    
+                }
+                function ADError(id)
+                {
+//                    alert("shibai");
+//                    id.parentNode.removeChild(id);
+                }
+                function ADSuccess(id)
+                {
+                    id.style.width = clientWidthOfCurrentDevice - marginleft*2;
+                    id.style.height = 35;
+                    id.style.marginBottom = "10px";
+//                    NotifyAddSubView();
+
+                }
+                function ChangeADImageSrc(url)
+                {
+                    var ADImage = document.getElementById("ADImage");
+                    ADImage.src = url;
+                }
+                function NotifyAddSubView()
+                {
+                    var mediaElement = document.getElementById("video");
+                    if( mediaElement.innerHTML.length > 0)
+                    {
+                        toVideo();
+                    }
+                    //set headImage
+                    var headImageElement = document.getElementById("headImage");
+                    if(headImageElement.innerHTML.length >0)
+                    {
+                        toHeadImage();
+                    }
+                }
+            //此方法为递归调用
+                function replaceAllTables()
+                {
+                    if(originalTableList.length == 0)
+                    {
+                        return;
+                    }
+                    
+                    var tableElement = originalTableList[currentTableIndex];
+                    html2canvas(tableElement, {
+                                onrendered: function(canvas) {
+                                var dataURL = canvas.toDataURL();
+                                dataURL =  dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+                                var i = canvas.childNodes.length;
+                                canvas.style.width = clientWidthOfCurrentDevice-contentImageMarginLeft*2;
+                                canvas.style.height = "auto";
+                                //                                        tableElement.parentNode.insertBefore(canvas,tableElement);
+                                //                                        tableElement.parentNode.removeChild(tableElement);
+                                
+                                canvas.onclick = function ()
+                                {
+                                var dataURL = canvas.toDataURL();
+                                dataURL =  dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+                                //                                        alert(dataURL);
+                                var positionString = getPosttionByElement(canvas);
+                                //                                        alert(positionString);
+                                var frameandImageData = positionString + "&" + dataURL;
+                                //                                        alert(frameandImageData);
+                                sendToApp(kSPWebActionPopTableImage,frameandImageData);
+                                }
+                                tableCanVasList.push(canvas);
+//                                alert("currentTableIndex:"+currentTableIndex);
+                                currentTableIndex++;
+                                if(currentTableIndex == tableCount )
+                                {
+                                    //out
+                                    replaceTableWithCanvas();
+                                }
+                                else
+                                {
+                                    //递归
+                                    replaceAllTables();
+                                }
+
+                                }
+                                });
+                    
+
+                }
+                function replaceTableWithCanvas()
+                {
+   
+                    for(var j=0;j<originalTableList.length;j++)
+                    {
+                        var tableElement = originalTableList[j];
+                        var canvas = tableCanVasList[j];
+                        tableElement.parentNode.insertBefore(canvas,tableElement);
+                        tableElement.parentNode.removeChild(tableElement);
+                    }
+                    sendToApp(kSPWebActionLayoutFinished, 'a');
+                }
+            
+                function changeClientWidthOfCurrentDevice(widthFromOutSide)
+                {
+                    clientWidthOfCurrentDevice = widthFromOutSide;
+                }
+                function toPlayVideo(){
+                    sendToApp(kSPWebActionPlayVideo, "");
+                }
+                </script>
+        <!--article object-->
+        <script type = "text/javascript">
+                function article(returnValue)
+                {
+                    this.returnValue = returnValue;
+                    this.title = "";
+                    this.createdateString = "";
+                    this.createdatetimeString = "";
+                    this.media = "";
+                    this.videoHtml = "";
+                    this.HDAlbumHtml = "";
+                    this.htmlResult = "";
+                    this.content = "";
+                    //视频长宽
+                    this.videoWidth = clientWidthOfCurrentDevice - marginleft*2;
+                    this.videoHeight = this.videoWidth*heightDevideWidth;
+                    //图片长宽
+                    this.imageWidth = clientWidthOfCurrentDevice - marginleft*2;
+                    this.imageHeight = this.imageWidth*heightDevideWidth;
+                    this.parse = function()
+                    {
+                        this.getTitle();
+                        this.getCreatedate();
+                        this.getArticle();
+                    }
+                    this.getTitle = function()
+                    {
+                        this.title =  this.returnValue.data.blogtitle;
+                    }
+                    this.getCreatedate = function()
+                    {
+                        this.createdateString =  this.returnValue.data.blogpubdate;;
+                    }
+                    
+                    this.getArticle = function()
+                    {
+                        this.content = this.returnValue.data.blogbody;
+                        //去除微博链接
+//                        this.content = this.content.replace(regex,"")
+                    }
+                }
+                
+                </script>
+        <!--onload method-->
+        <script type = "text/javascript">
+                function load(returnValue)
+                {
+                    var articleClient = new article(returnValue);
+                    articleClient.parse();
+                    //set maintitle
+                    var titleElement = document.getElementById("title");
+                    titleElement.innerHTML = articleClient.title;
+                    //set  blogpubdate
+                    var createdateElement = document.getElementById("blogpubdate");
+                    createdateElement.innerHTML = articleClient.createdateString;
+                    //set article
+                    var postCon = document.getElementById("article");
+                    postCon.innerHTML = articleClient.content;
+                    
+                    //set
+                    setPageContent();
+                    sendToApp(kSPWebActionLayoutFinished, 'a');
+                }
+            </script>
+        <script language="javascript" type="text/javascript">
+            document.onreadystatechange = function () {
+                    if (document.readyState == "complete") {
+                        onloadActionReady();
+                    }
+                }
+            
+        </script>
+    </head>
+ <!--onload = "onloadActionReady()"-->
+    <body>
+        <div id="container">
+            <div id="title"></div>
+            <div id="blogpubdate"></div>
+            <div id="article"></div>
+        </div>
+    </body>
+</html>
