@@ -31,8 +31,17 @@
                                         options:nil] objectAtIndex:0];
     return self;
 }
-
--(CGFloat)cellHeight
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
+                                              owner:self
+                                            options:nil] objectAtIndex:0];
+    }
+    return self;
+}
++(CGFloat)cellHeight
 {
     return 0.0;
 }

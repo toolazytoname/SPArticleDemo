@@ -110,9 +110,42 @@
 }
 - (void)layoutArticle
 {
-
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Article" ofType:@"html"];
+    NSError *error = nil;
+    NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+    if (error) {
+        NSLog(@"there is an error:%@",error);
+        return;
+    }
+    NSURL *baseUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+    [self.webview loadHTMLString:html baseURL:baseUrl];
 }
+- (void)readyForData
+{
+    NSString *loadHandle = [NSString stringWithFormat:@"load(%@)",self.articleData];
+    [self runJSFuncion:loadHandle];
+}
+- (void)layoutArticleFinished
+{
+//    self.webview.co
+//    [self.webview sizeToFit];
 
+    self.webview.scrollView.scrollEnabled = NO;
+    self.webview.scrollView.bounces = NO;
+    
+    CGRect frame = self.webview.frame;
+    frame.size.height = 1;
+    self.webview.frame = frame;
+    // Asks the view to calculate and return the size that best fits its subviews.
+    CGSize fittingSize = [self.webview sizeThatFits:CGSizeZero];
+    frame.size = fittingSize;
+    self.webview.frame = frame;
+
+    self.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.webview.frame), CGRectGetHeight(self.webview.frame));
+    if (self.awViewControllerDelegate && [self.awViewControllerDelegate respondsToSelector:@selector(layoutArticleFinished:SPAWViewController:)]) {
+        [self.awViewControllerDelegate layoutArticleFinished:self.webview SPAWViewController:self];
+    }
+}
 
 
 #pragma mark - 网络请求相关

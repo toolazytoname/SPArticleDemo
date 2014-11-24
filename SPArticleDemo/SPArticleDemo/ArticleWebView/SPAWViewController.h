@@ -7,6 +7,10 @@
 //
 
 #import "SPArtWebViewController.h"
+@class SPAWViewController;
+@protocol SPAWViewControllerDelegate<NSObject>
+- (void)layoutArticleFinished:(UIWebView *)webView SPAWViewController:(SPAWViewController *)AWViewController;
+@end
 
 @interface SPAWViewController : SPArtWebViewController
 @property (nonatomic, strong) NSString *articleData;
@@ -20,5 +24,7 @@
 @property (nonatomic, strong) NSString *liveURL;
 @property (nonatomic, assign) BOOL isVideoArticle;
 
+
+@property(nonatomic, assign) id<SPAWViewControllerDelegate> awViewControllerDelegate;
 - (void)loadArticle;
 @end

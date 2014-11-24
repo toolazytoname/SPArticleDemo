@@ -7,8 +7,13 @@
 //
 
 #import "VideoBaseTableViewCell.h"
-
+@class SPAWViewController;
+@class ArticleWebViewTableViewCell;
+@protocol ArticleWebViewTableViewCellDelegate <NSObject>
+- (void)layoutArticleFinished:(UIWebView *)webView SPAWViewController:(SPAWViewController *)AWViewController ArticleWebViewTableViewCell:(ArticleWebViewTableViewCell *)ArticleWebViewTableViewCell;
+@end
 
 @interface ArticleWebViewTableViewCell : VideoBaseTableViewCell
+@property (nonatomic, assign) id<ArticleWebViewTableViewCellDelegate> articleWebViewTableViewCellDelegate;
 
 @end

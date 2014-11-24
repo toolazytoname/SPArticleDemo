@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441E56F21A233EC300EA27AD /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 441E56F11A233EC300EA27AD /* Reveal.framework */; };
 		445A179F1A1EE9E40031CD37 /* ArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 445A179E1A1EE9E40031CD37 /* ArticleTableViewController.m */; };
 		445A17A21A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 445A17A11A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m */; };
 		445A17A41A1F3F610031CD37 /* ArticleTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445A17A31A1F3F610031CD37 /* ArticleTitleTableViewCell.xib */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		441E56F11A233EC300EA27AD /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		445A179D1A1EE9E40031CD37 /* ArticleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewController.h; sourceTree = "<group>"; };
 		445A179E1A1EE9E40031CD37 /* ArticleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewController.m; sourceTree = "<group>"; };
 		445A17A01A1F3F2C0031CD37 /* ArticleTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTitleTableViewCell.h; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				441E56F21A233EC300EA27AD /* Reveal.framework in Frameworks */,
 				44A4B1701A1DD8F7007C6451 /* MobileCoreServices.framework in Frameworks */,
 				44A4B16E1A1DD8EC007C6451 /* libz.1.2.5.dylib in Frameworks */,
 			);
@@ -210,6 +213,7 @@
 		44942EBF1A1C75BB00281332 = {
 			isa = PBXGroup;
 			children = (
+				441E56F11A233EC300EA27AD /* Reveal.framework */,
 				44A4B16F1A1DD8F7007C6451 /* MobileCoreServices.framework */,
 				44A4B16D1A1DD8EC007C6451 /* libz.1.2.5.dylib */,
 				44942ECA1A1C75BB00281332 /* SPArticleDemo */,
@@ -705,10 +709,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SPArticleDemo/ArticleDemo-Prefix.pch";
 				INFOPLIST_FILE = SPArticleDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -717,10 +730,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SPArticleDemo/ArticleDemo-Prefix.pch";
 				INFOPLIST_FILE = SPArticleDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

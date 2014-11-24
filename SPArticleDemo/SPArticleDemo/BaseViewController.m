@@ -9,6 +9,11 @@
 #import "BaseViewController.h"
 
 @implementation BaseViewController
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.requestQueue = [NSMutableArray array];
+}
 #pragma mark Utils
 -(void)addRequest:(BaseDataRequest *)request
 {

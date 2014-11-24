@@ -12,20 +12,14 @@
 static NSString *ArticleWebViewTableViewCellIdentifier = @"ArticleWebViewTableViewCellIdentifier";
 static NSString *ArticleTitleTableViewCellIdentifier = @"ArticleTitleTableViewCellIdentifier";
 
-@interface ArticleTableViewController ()
-@property (nonatomic,strong) NSArray *dataList;
+@interface ArticleTableViewController ()<ArticleWebViewTableViewCellDelegate>
 @end
 
 @implementation ArticleTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[ArticleWebViewTableViewCell class] forCellReuseIdentifier:ArticleWebViewTableViewCellIdentifier];
-    [self.tableView registerClass:[ArticleTitleTableViewCell class] forCellReuseIdentifier:ArticleTitleTableViewCellIdentifier];
-    
-    
-    self.dataList = [NSArray arrayWithObjects:@"http://sports.sina.com.cn/g/pl/2014-11-21/11577418385.shtml",@"1b",@"2bc",@"3bd",@"4eb",@"5fb",@"6gb",@"7hb",@"8ib",@"9ib", nil];
-    
+       
     
 }
 
@@ -43,7 +37,7 @@ static NSString *ArticleTitleTableViewCellIdentifier = @"ArticleTitleTableViewCe
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 10;
+    return self.dataList.count;
 }
 
 
@@ -52,64 +46,37 @@ static NSString *ArticleTitleTableViewCellIdentifier = @"ArticleTitleTableViewCe
     VideoBaseTableViewCell *cell;
     if (indexPath.row == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:ArticleWebViewTableViewCellIdentifier];
-        if (!cell) {
-            cell = [[ArticleWebViewTableViewCell alloc] initWithFrame:CGRectZero];
-        }
+        ArticleWebViewTableViewCell* webViewCell = (ArticleWebViewTableViewCell*)cell;
+        webViewCell.articleWebViewTableViewCellDelegate = self;
     }
     else
     {
         cell = [tableView dequeueReusableCellWithIdentifier:ArticleTitleTableViewCellIdentifier];
-        if (!cell) {
-            cell = [[ArticleTitleTableViewCell alloc] initWithFrame:CGRectZero];
-        }
     }
     [cell updateCellWithModel:item];
+    
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height;
+    if (indexPath.row == 0) {
+        height = [ArticleWebViewTableViewCell cellHeight];
+    }
+    else
+    {
+        height = [ArticleTitleTableViewCell cellHeight];
+    }
+    NSLog(@"row height:%f",height);
+    return height;
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)layoutArticleFinished:(UIWebView *)webView SPAWViewController:(SPAWViewController *)AWViewController ArticleWebViewTableViewCell:(ArticleWebViewTableViewCell *)ArticleWebViewTableViewCell
+{
+    NSArray *indexPaths = [NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil];
+    [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

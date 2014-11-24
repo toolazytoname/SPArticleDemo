@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ArticleTableViewController : UITableViewController
+@property (nonatomic,strong) NSArray *dataList;
 
 @end

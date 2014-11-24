@@ -9,33 +9,52 @@
 
 #import "ArticleWebViewTableViewCell.h"
 #import "SPAWViewController.h"
+static CGFloat cellHeightStatic;
 
-@interface ArticleWebViewTableViewCell()
+@interface ArticleWebViewTableViewCell()<SPAWViewControllerDelegate>
 @property (nonatomic, retain) SPAWViewController *awViewController;
 @end
 
 
 @implementation ArticleWebViewTableViewCell
--(id)initWithFrame:(CGRect)frame
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithFrame:frame];
-    _awViewController = [[SPAWViewController alloc] initWithNibName:@"SPAWViewController" bundle:nil];
-    [self.contentView addSubview:self.awViewController.view];
-    return self;
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        _awViewController = [[SPAWViewController alloc] initWithNibName:@"SPAWViewController" bundle:nil];
+        [self.contentView addSubview:self.awViewController.view];
+        self.awViewController.awViewControllerDelegate = self;
+    }
+    return  self;
 }
+
 
 -(void)updateCellWithModel:(id)model
 {
     if (model && [model isKindOfClass:[NSString class]]) {
-        self.awViewController.urlParam = model;
-        [self.awViewController loadArticle];
+        if(!self.awViewController.urlParam)
+        {
+            self.awViewController.urlParam = model;
+            [self.awViewController loadArticle];
+        }
     }
 }
 
--(CGFloat)cellHeight
+
+
++(CGFloat)cellHeight
 {
-//    CGFloat height = CGRectGetHeight(self.awViewController.view.frame);
-//    return height;
-    return 100.0;
+    NSLog(@"cellHeightStatic:%f",cellHeightStatic);
+    return cellHeightStatic;
+}
+
+
+- (void)layoutArticleFinished:(UIWebView *)webView SPAWViewController:(SPAWViewController *)AWViewController;
+{
+    cellHeightStatic = CGRectGetHeight(webView.frame);
+    if (self.articleWebViewTableViewCellDelegate && [self.articleWebViewTableViewCellDelegate respondsToSelector:@selector(layoutArticleFinished:SPAWViewController:ArticleWebViewTableViewCell:)]) {
+        [self.articleWebViewTableViewCellDelegate layoutArticleFinished:webView SPAWViewController:AWViewController ArticleWebViewTableViewCell:self];
+    }
+    
 }
 @end

@@ -11,5 +11,5 @@
 @interface VideoBaseTableViewCell : UITableViewCell
 -(void)updateCellWithModel:(id)model;
 -(id)initWithFrame:(CGRect)frame;
--(CGFloat)cellHeight;
++(CGFloat)cellHeight;
 @end
