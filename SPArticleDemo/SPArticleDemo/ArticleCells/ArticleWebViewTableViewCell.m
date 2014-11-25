@@ -8,6 +8,7 @@
 //
 
 #import "ArticleWebViewTableViewCell.h"
+#import "SPAWViewController+ArticleData.h"
 #import "SPAWViewController.h"
 static CGFloat cellHeightStatic;
 

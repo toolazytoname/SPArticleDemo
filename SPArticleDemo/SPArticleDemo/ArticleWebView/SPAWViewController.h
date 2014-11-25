@@ -7,6 +7,7 @@
 //
 
 #import "SPArtWebViewController.h"
+
 @class SPAWViewController;
 @protocol SPAWViewControllerDelegate<NSObject>
 - (void)layoutArticleFinished:(UIWebView *)webView SPAWViewController:(SPAWViewController *)AWViewController;
@@ -26,5 +27,4 @@
 
 
 @property(nonatomic, assign) id<SPAWViewControllerDelegate> awViewControllerDelegate;
-- (void)loadArticle;
 @end

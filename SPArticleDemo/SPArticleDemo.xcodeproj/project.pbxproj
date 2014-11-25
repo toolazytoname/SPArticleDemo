@@ -11,6 +11,7 @@
 		445A179F1A1EE9E40031CD37 /* ArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 445A179E1A1EE9E40031CD37 /* ArticleTableViewController.m */; };
 		445A17A21A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 445A17A11A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m */; };
 		445A17A41A1F3F610031CD37 /* ArticleTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445A17A31A1F3F610031CD37 /* ArticleTitleTableViewCell.xib */; };
+		447A46E41A242A8100F5570F /* SPAWViewController+ArticleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */; };
 		44942ECE1A1C75BB00281332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942ECD1A1C75BB00281332 /* main.m */; };
 		44942ED11A1C75BB00281332 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942ED01A1C75BB00281332 /* AppDelegate.m */; };
 		44942ED41A1C75BB00281332 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942ED31A1C75BB00281332 /* ViewController.m */; };
@@ -84,6 +85,8 @@
 		445A17A01A1F3F2C0031CD37 /* ArticleTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTitleTableViewCell.h; sourceTree = "<group>"; };
 		445A17A11A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTitleTableViewCell.m; sourceTree = "<group>"; };
 		445A17A31A1F3F610031CD37 /* ArticleTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTitleTableViewCell.xib; sourceTree = "<group>"; };
+		447A46E21A242A8100F5570F /* SPAWViewController+ArticleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPAWViewController+ArticleData.h"; sourceTree = "<group>"; };
+		447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPAWViewController+ArticleData.m"; sourceTree = "<group>"; };
 		44942EC81A1C75BB00281332 /* SPArticleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPArticleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44942ECC1A1C75BB00281332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44942ECD1A1C75BB00281332 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 				44A4B0DA1A1DD153007C6451 /* SPAWViewController.h */,
 				44A4B0DB1A1DD153007C6451 /* SPAWViewController.m */,
 				44A4B0DD1A1DD26F007C6451 /* SPAWViewController.xib */,
+				447A46E21A242A8100F5570F /* SPAWViewController+ArticleData.h */,
+				447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */,
 			);
 			path = ArticleWebView;
 			sourceTree = "<group>";
@@ -569,6 +574,7 @@
 				44A4B14F1A1DD6A2007C6451 /* BaseDataRequest.m in Sources */,
 				44A4B16B1A1DD6A2007C6451 /* UIView+ITTAdditions.m in Sources */,
 				44A4B1651A1DD6A2007C6451 /* NSDictionary+Safe.m in Sources */,
+				447A46E41A242A8100F5570F /* SPAWViewController+ArticleData.m in Sources */,
 				445A17A21A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m in Sources */,
 				44A4B1471A1DD6A2007C6451 /* ASIAuthenticationDialog.m in Sources */,
 				44A4B09F1A1DC1D2007C6451 /* VideoDetailTableViewCell.m in Sources */,
