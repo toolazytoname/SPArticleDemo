@@ -31,5 +31,15 @@
         ArticleViewController *articleViewController = segue.destinationViewController;
         articleViewController.urlParam = @"http://sports.sina.com.cn/g/2014-11-20/11227417104.shtml";
     }
+    
+    if ([segue.identifier isEqualToString:@"ArticleWithHotComment"]) {
+        ArticleViewController *articleViewController = segue.destinationViewController;
+        articleViewController.urlParam = @"http://sports.sina.com.cn/g/pl/2014-11-21/11577418385.shtml";
+    }
+    
+    if ([segue.identifier isEqualToString:@"ArticleWithTheme"]) {
+        ArticleViewController *articleViewController = segue.destinationViewController;
+        articleViewController.urlParam = @"http://sports.sina.com.cn/g/pl/2014-11-21/11577418385.shtml";
+    }
 }
 @end

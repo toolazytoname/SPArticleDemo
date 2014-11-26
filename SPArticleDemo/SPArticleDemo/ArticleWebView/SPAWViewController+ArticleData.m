@@ -105,9 +105,12 @@
 }
 - (void)layoutArticleFinished
 {
-    //    self.webview.co
-    //    [self.webview sizeToFit];
-    
+//    [self disableScroll];
+
+}
+
+-(void)disableScroll
+{
     self.webview.scrollView.scrollEnabled = NO;
     self.webview.scrollView.bounces = NO;
     
