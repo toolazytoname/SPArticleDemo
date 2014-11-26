@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ArticleViewController.h"
+#import "SPAWViewController.h"
 
 @interface ViewController ()
 
@@ -38,8 +39,9 @@
     }
     
     if ([segue.identifier isEqualToString:@"ArticleWithTheme"]) {
-        ArticleViewController *articleViewController = segue.destinationViewController;
-        articleViewController.urlParam = @"http://sports.sina.com.cn/g/pl/2014-11-21/11577418385.shtml";
+        SPAWViewController *awViewController = segue.destinationViewController;
+        awViewController.urlParam = @"http://sports.sina.com.cn/g/pl/2014-11-21/11577418385.shtml";
+        awViewController.isThemeParam = YES;
     }
 }
 @end

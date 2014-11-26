@@ -32,22 +32,25 @@
 {
     [super viewDidLoad];
     [self loadArticle];
-    [self addTheme];
+    if (self.isThemeParam) {
+        [self addTheme];
+    }
+
 }
-
-
-
-
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self changeNavigationBarTransparent];
+    if (self.isThemeParam) {
+        [self changeNavigationBarTransparent];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self returnNavigationBarDefault];
+    if (self.isThemeParam) {
+        [self returnNavigationBarDefault];
+    }
     [super viewWillDisappear:animated];
 }
 

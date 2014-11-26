@@ -20,6 +20,8 @@
 @property(nonatomic,strong) NSString *typeParam;
 @property(nonatomic,strong) NSString *urlParam;
 @property(nonatomic,strong) NSString *liveParam;
+//是否是专题样式
+@property(nonatomic,assign) bool isThemeParam;
 
 
 @property (nonatomic, strong) NSString *liveURL;

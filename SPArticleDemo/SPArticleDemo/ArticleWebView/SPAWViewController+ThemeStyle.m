@@ -54,7 +54,7 @@ CGFloat statusHeight = 20;
 - (void)willChangeHeightFromOffset:(CGFloat)offset{
     UIImageView *themeImageView = (UIImageView *)[self.webview viewWithTag:themeImageViewTag];
     
-    CGFloat standardOffset =  - statusHeight;//-64
+    CGFloat standardOffset =  - statusHeight;//如果现实navigationBar则数值为 -64否则   -20
     CGFloat hideImageOffset = themeImageHeight  - statusHeight;//236
     
     if (offset < standardOffset)//正常状态，往下拖
@@ -63,7 +63,7 @@ CGFloat statusHeight = 20;
         themeImageView.top = 0.0 ;
         [self changeNavigationBarTransparent];
     }
-    else  if(standardOffset <= offset && offset <= hideImageOffset)//往上脱
+    else  if(standardOffset <= offset && offset <= hideImageOffset)//正常状态，往上脱，拖到图片完全不可见
     {
         float r = 1- offset / hideImageOffset;
         [themeImageView setAlpha:r];
