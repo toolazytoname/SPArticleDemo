@@ -11,6 +11,7 @@
 		445A179F1A1EE9E40031CD37 /* ArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 445A179E1A1EE9E40031CD37 /* ArticleTableViewController.m */; };
 		445A17A21A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 445A17A11A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m */; };
 		445A17A41A1F3F610031CD37 /* ArticleTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445A17A31A1F3F610031CD37 /* ArticleTitleTableViewCell.xib */; };
+		445C8DC11A25827C00105460 /* SPAWViewController+ThemeStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 445C8DC01A25827C00105460 /* SPAWViewController+ThemeStyle.m */; };
 		447A46E41A242A8100F5570F /* SPAWViewController+ArticleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */; };
 		447A46E61A246C0600F5570F /* themeImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 447A46E51A246C0600F5570F /* themeImage.jpg */; };
 		44942ECE1A1C75BB00281332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942ECD1A1C75BB00281332 /* main.m */; };
@@ -86,6 +87,8 @@
 		445A17A01A1F3F2C0031CD37 /* ArticleTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTitleTableViewCell.h; sourceTree = "<group>"; };
 		445A17A11A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTitleTableViewCell.m; sourceTree = "<group>"; };
 		445A17A31A1F3F610031CD37 /* ArticleTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTitleTableViewCell.xib; sourceTree = "<group>"; };
+		445C8DBF1A25827C00105460 /* SPAWViewController+ThemeStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPAWViewController+ThemeStyle.h"; sourceTree = "<group>"; };
+		445C8DC01A25827C00105460 /* SPAWViewController+ThemeStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPAWViewController+ThemeStyle.m"; sourceTree = "<group>"; };
 		447A46E21A242A8100F5570F /* SPAWViewController+ArticleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPAWViewController+ArticleData.h"; sourceTree = "<group>"; };
 		447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPAWViewController+ArticleData.m"; sourceTree = "<group>"; };
 		447A46E51A246C0600F5570F /* themeImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = themeImage.jpg; sourceTree = "<group>"; };
@@ -355,6 +358,8 @@
 				44A4B0DD1A1DD26F007C6451 /* SPAWViewController.xib */,
 				447A46E21A242A8100F5570F /* SPAWViewController+ArticleData.h */,
 				447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */,
+				445C8DBF1A25827C00105460 /* SPAWViewController+ThemeStyle.h */,
+				445C8DC01A25827C00105460 /* SPAWViewController+ThemeStyle.m */,
 			);
 			path = ArticleWebView;
 			sourceTree = "<group>";
@@ -579,6 +584,7 @@
 				44A4B16B1A1DD6A2007C6451 /* UIView+ITTAdditions.m in Sources */,
 				44A4B1651A1DD6A2007C6451 /* NSDictionary+Safe.m in Sources */,
 				447A46E41A242A8100F5570F /* SPAWViewController+ArticleData.m in Sources */,
+				445C8DC11A25827C00105460 /* SPAWViewController+ThemeStyle.m in Sources */,
 				445A17A21A1F3F2C0031CD37 /* ArticleTitleTableViewCell.m in Sources */,
 				44A4B1471A1DD6A2007C6451 /* ASIAuthenticationDialog.m in Sources */,
 				44A4B09F1A1DC1D2007C6451 /* VideoDetailTableViewCell.m in Sources */,
