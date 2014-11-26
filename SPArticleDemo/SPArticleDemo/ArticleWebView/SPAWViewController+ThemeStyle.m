@@ -61,19 +61,20 @@ CGFloat statusHeight = 20;
     {
         themeImageView.height =  -offset + themeImageHeight + standardOffset ;
         themeImageView.top = 0.0 ;
-        [self changeNavigationBarTransparent];
     }
-    else  if(standardOffset <= offset && offset <= hideImageOffset)//正常状态，往上脱，拖到图片完全不可见
+    else //正常状态，往上脱，拖到图片完全不可见
     {
         float r = 1- offset / hideImageOffset;
         [themeImageView setAlpha:r];
         themeImageView.top = -offset  + standardOffset ;
+    }
+    
+    
+    if (offset <= hideImageOffset - self.navigationController.navigationBar.height ) {
         [self changeNavigationBarTransparent];
     }
     else
     {
-        themeImageView.alpha = 0;
-        themeImageView.top = -offset  + standardOffset ;
         [self returnNavigationBarDefault];
     }
 }
