@@ -34,8 +34,8 @@
     }
     
     if ([segue.identifier isEqualToString:@"ArticleWithHotComment"]) {
-        ArticleViewController *articleViewController = segue.destinationViewController;
-        articleViewController.urlParam = @"http://sports.sina.com.cn/g/pl/2014-11-21/11577418385.shtml";
+        SPAWViewController *awViewController = segue.destinationViewController;
+        awViewController.urlParam = @"http://sports.sina.com.cn/g/pl/2014-11-21/11577418385.shtml";
     }
     
     if ([segue.identifier isEqualToString:@"ArticleWithTheme"]) {
