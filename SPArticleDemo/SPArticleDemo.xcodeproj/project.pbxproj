@@ -21,6 +21,7 @@
 		44942ED91A1C75BB00281332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44942ED81A1C75BB00281332 /* Images.xcassets */; };
 		44942EDC1A1C75BB00281332 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44942EDA1A1C75BB00281332 /* LaunchScreen.xib */; };
 		44942EE81A1C75BB00281332 /* SPArticleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942EE71A1C75BB00281332 /* SPArticleDemoTests.m */; };
+		449CF6761A3046A600C5B65D /* SPAWViewController+HotComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 449CF6751A3046A600C5B65D /* SPAWViewController+HotComments.m */; };
 		44A4B09B1A1DC1D2007C6451 /* VideoBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A4B08D1A1DC1D2007C6451 /* VideoBaseTableViewCell.m */; };
 		44A4B09C1A1DC1D2007C6451 /* VideoBaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44A4B08E1A1DC1D2007C6451 /* VideoBaseTableViewCell.xib */; };
 		44A4B09D1A1DC1D2007C6451 /* VideoCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44A4B0901A1DC1D2007C6451 /* VideoCommentTableViewCell.m */; };
@@ -105,6 +106,8 @@
 		44942EE11A1C75BB00281332 /* SPArticleDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPArticleDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44942EE61A1C75BB00281332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44942EE71A1C75BB00281332 /* SPArticleDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPArticleDemoTests.m; sourceTree = "<group>"; };
+		449CF6741A3046A600C5B65D /* SPAWViewController+HotComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPAWViewController+HotComments.h"; sourceTree = "<group>"; };
+		449CF6751A3046A600C5B65D /* SPAWViewController+HotComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPAWViewController+HotComments.m"; sourceTree = "<group>"; };
 		44A4B08C1A1DC1D2007C6451 /* VideoBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoBaseTableViewCell.h; sourceTree = "<group>"; };
 		44A4B08D1A1DC1D2007C6451 /* VideoBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoBaseTableViewCell.m; sourceTree = "<group>"; };
 		44A4B08E1A1DC1D2007C6451 /* VideoBaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoBaseTableViewCell.xib; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */,
 				445C8DBF1A25827C00105460 /* SPAWViewController+ThemeStyle.h */,
 				445C8DC01A25827C00105460 /* SPAWViewController+ThemeStyle.m */,
+				449CF6741A3046A600C5B65D /* SPAWViewController+HotComments.h */,
+				449CF6751A3046A600C5B65D /* SPAWViewController+HotComments.m */,
 			);
 			path = ArticleWebView;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				44A4B14B1A1DD6A2007C6451 /* ASIFormDataRequest.m in Sources */,
 				44A4B0A81A1DC1D9007C6451 /* ArticleViewController.m in Sources */,
 				44A4B14E1A1DD6A2007C6451 /* ASINetworkQueue.m in Sources */,
+				449CF6761A3046A600C5B65D /* SPAWViewController+HotComments.m in Sources */,
 				44942ED41A1C75BB00281332 /* ViewController.m in Sources */,
 				44A4B1631A1DD6A2007C6451 /* JSONKit.m in Sources */,
 				44A4B0D01A1DCE98007C6451 /* SPArtWebViewController.m in Sources */,

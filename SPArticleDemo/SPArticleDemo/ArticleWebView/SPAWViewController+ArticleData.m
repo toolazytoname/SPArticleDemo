@@ -9,6 +9,7 @@
 #import "SPAWViewController+ArticleData.h"
 #import "OPArticleObject.h"
 #import "OPUtility.h"
+#import "SPAWViewController+HotComments.h"
 
 @implementation SPAWViewController (ArticleData)
 - (void)loadArticle
@@ -102,12 +103,14 @@
 {
     NSString *loadHandle = [NSString stringWithFormat:@"load(%@)",self.articleData];
     [self runJSFuncion:loadHandle];
-}
-- (void)layoutArticleFinished
-{
-//    [self disableScroll];
+    
 
+    [self requestHotComments];
 }
+//- (void)requestHotComments
+//{
+////    [self disableScroll];
+//}
 
 -(void)disableScroll
 {
@@ -286,6 +289,9 @@
         //        NSString *weiboCardUrl = [NSString stringWithFormat:@"http://i.api.weibo.com/2/statuses/show.json?source=%@&id=%@",Login_APPVALUE,ids];
         //        NSString *weiboCardHandle = [NSString stringWithFormat:@"AddWeiboCardByInterface(\"%@\",\"%@\")",weiboCardUrl,self.completeWeiboCardUrl];
         //        [self runJSFuncion:weiboCardHandle];
+    }
+    if (tag == 4) {
+        [self parseHotComments:request];
     }
 }
 - (void)request:(BaseDataRequest*)request didFailLoadWithError:(NSError*)error

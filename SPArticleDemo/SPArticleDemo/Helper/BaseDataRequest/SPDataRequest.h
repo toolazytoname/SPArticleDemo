@@ -16,3 +16,11 @@
 
 @end
 
+
+/**
+ *  获取热门评论数据
+ */
+#define SPHotCommentKey @"SPHotCommentKey"
+@interface SPHotCommentDataRequest : SPBaseDataRequest
+
+@end

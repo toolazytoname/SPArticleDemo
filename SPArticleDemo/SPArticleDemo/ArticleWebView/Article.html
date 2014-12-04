@@ -969,7 +969,43 @@
                         sendToApp(kSPWebActionLayoutFinished, 'a');
                     }
                 }
-            </script>
+        </script>
+        <!-- 解析热门评论 -->
+        <script type = "text/javascript">
+            function parseHotComments(HotCommentsArray)
+            {
+                var hotCommentsElement = document.getElementById("hotComment");
+                var commentHtml = '';
+                for(var i = 0;i < HotCommentsArray.length;i++)
+                {
+                    var area = HotCommentsArray[i].area;
+                    var content = HotCommentsArray[i].content;
+                    var nick = HotCommentsArray[i].nick;
+                    var time = HotCommentsArray[i].time;
+                    var vote = HotCommentsArray[i].vote;
+                    var agree = HotCommentsArray[i].agree;
+                    commentHtml +='<div comment-type="item" class="item clearfix">';
+                    commentHtml +='<div class="head">';
+                    commentHtml +='<img Style ="border-radius: 25px;" src="http://tp1.sinaimg.cn/1871153440/50/5703248024/0">';
+                    commentHtml +='</div>';
+                    commentHtml +='<!-- 头像 end -->';
+                    commentHtml +='<!-- 内容 start -->';
+                    commentHtml +='<div  class="cont">';
+                    commentHtml +='<div class="info">';
+                    commentHtml += nick;
+                    commentHtml +='<div style="float: right;">今天11:58</div>';
+                    commentHtml +='</div>';
+                    commentHtml +='<div comment-type="itemTxt" class="txt">'+ content+'</div><div class="action">';
+                    commentHtml +='<div class="area">['+ area+']</div>';
+                    commentHtml +='<div class="btns">';
+                    commentHtml +='<img Style ="width: 25px; height: 25px" src="http://tp1.sinaimg.cn/1871153440/50/5703248024/0"> 32';
+                    commentHtml +='<img Style ="width: 25px; height: 25px" src="http://tp1.sinaimg.cn/1871153440/50/5703248024/0"> 2</div></span></div></div><!-- 内容 end --><div><hr align = "left"  Style="margin width:260;color:gray;size:1; margin: 0px 0px 0px 0px;"></div></div><!-- 列表元素 end -->';
+                }
+                hotCommentsElement.innerHTML = commentHtml;
+
+
+            }
+        </script>
         <script language="javascript" type="text/javascript">
             document.onreadystatechange = function () {
                     if (document.readyState == "complete") {
@@ -1000,7 +1036,7 @@
             <div id="headImage" align="center"></div>
             <div id="article"></div>
             <!--newWeibo  通过接口返回数据，自己拼接微博卡片-->
-            <div  id="weiboCardContainer">
+            <div id="weiboCardContainer">
                 <a id="weiboCardAnchor">
                     <div id="weiboCard">
                         <div  id="profile_image_container"  >
@@ -1022,7 +1058,9 @@
             <div id="BottomAD">
                 <img id = "BottomADImage" scr="" onload = "BottomADSuccess(this)" onerror = "ADError(this)" onclick = "bottomADImageClick()" >
             </div>
-     
+
+     <div id="hotComment">
+    </div>
      <!--            热门评论 start-->
      <div >
          
@@ -1058,7 +1096,9 @@
                      </div>
                  </div>
                  <!-- 内容 end -->
-                 
+                 <div>
+                     <hr align = "left"  Style="margin width:260;color:gray;size:1; margin: 0px 0px 0px 0px;">
+                 </div>
              </div>
              <!-- 列表元素 end -->
              
@@ -1080,23 +1120,20 @@
                          <div class="area">[贵州贵阳]</div>
                          <div class="btns">
                              <img Style ="width: 25px; height: 25px" src="http://tp1.sinaimg.cn/1871153440/50/5703248024/0"> 32
-                                 <img Style ="width: 25px; height: 25px" src="http://tp1.sinaimg.cn/1871153440/50/5703248024/0"> 2
-                                     </div>
+                             <img Style ="width: 25px; height: 25px" src="http://tp1.sinaimg.cn/1871153440/50/5703248024/0"> 2
+                         </div>
                          </span>
                      </div>
                  </div>
                  <!-- 内容 end -->
-                 
+                 <div>
+                     <hr align = "left"  Style="margin width:260;color:gray;size:1; margin: 0px 0px 0px 0px;">
+                 </div>
              </div>
              <!-- 列表元素 end -->
              
          </div>
          <!-- 列表 end -->
-         
-         <div>
-             <hr align = "left"  Style="margin width:260;color:gray;size:1; margin: 0px 0px 0px 0px;">
-         </div>
-         
          <div align = "center">
              查看更多评论
          </div>

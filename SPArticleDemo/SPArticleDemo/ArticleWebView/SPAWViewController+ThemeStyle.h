@@ -1,6 +1,6 @@
 //
 //  SPAWViewController+ThemeStyle.h
-//  SPArticleDemo
+//  SPArticleDemo 精编样式
 //
 //  Created by SINA on 14/11/26.
 //  Copyright (c) 2014年 Sport. All rights reserved.
