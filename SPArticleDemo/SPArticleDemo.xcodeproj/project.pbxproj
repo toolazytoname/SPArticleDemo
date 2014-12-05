@@ -16,11 +16,8 @@
 		44795CB81A31598A0085A570 /* SPSpecialColumnListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CB21A31598A0085A570 /* SPSpecialColumnListTableViewController.m */; };
 		44795CB91A31598A0085A570 /* SPSpecialColumnManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CB41A31598A0085A570 /* SPSpecialColumnManagerController.m */; };
 		44795CBA1A31598A0085A570 /* SPSpecialColumnManagerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CB61A31598A0085A570 /* SPSpecialColumnManagerTableViewController.m */; };
-		44795CBD1A3159BD0085A570 /* SPSpecialColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CBC1A3159BD0085A570 /* SPSpecialColumnCell.m */; };
-		44795CBF1A3159EA0085A570 /* SPSpecialColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44795CBE1A3159EA0085A570 /* SPSpecialColumnCell.xib */; };
 		44795CC51A3160180085A570 /* SPSpecialColumnActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CC31A3160180085A570 /* SPSpecialColumnActionCell.m */; };
 		44795CC61A3160180085A570 /* SPSpecialColumnActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44795CC41A3160180085A570 /* SPSpecialColumnActionCell.xib */; };
-		44795CC91A3195C20085A570 /* SPSpecialColumnModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CC81A3195C20085A570 /* SPSpecialColumnModule.m */; };
 		44795CCD1A319FA10085A570 /* SPSpecialColumnBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CCB1A319FA10085A570 /* SPSpecialColumnBaseCell.m */; };
 		44795CCE1A319FA10085A570 /* SPSpecialColumnBaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44795CCC1A319FA10085A570 /* SPSpecialColumnBaseCell.xib */; };
 		44795CEF1A31A9620085A570 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CD31A31A9620085A570 /* MKAnnotationView+WebCache.m */; };
@@ -37,6 +34,9 @@
 		44795CFA1A31A9620085A570 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CEA1A31A9620085A570 /* UIImage+MultiFormat.m */; };
 		44795CFB1A31A9620085A570 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CEC1A31A9620085A570 /* UIImage+WebP.m */; };
 		44795CFC1A31A9620085A570 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CEE1A31A9620085A570 /* UIImageView+WebCache.m */; };
+		44795CFF1A31BFF10085A570 /* SPSpecialColumnModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795CFE1A31BFF10085A570 /* SPSpecialColumnModule.m */; };
+		44795D031A31C0080085A570 /* SPSpecialColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44795D011A31C0080085A570 /* SPSpecialColumnCell.m */; };
+		44795D041A31C0080085A570 /* SPSpecialColumnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44795D021A31C0080085A570 /* SPSpecialColumnCell.xib */; };
 		447A46E41A242A8100F5570F /* SPAWViewController+ArticleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */; };
 		447A46E61A246C0600F5570F /* themeImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 447A46E51A246C0600F5570F /* themeImage.jpg */; };
 		44942ECE1A1C75BB00281332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44942ECD1A1C75BB00281332 /* main.m */; };
@@ -123,14 +123,9 @@
 		44795CB41A31598A0085A570 /* SPSpecialColumnManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSpecialColumnManagerController.m; path = SpecialColumn/SPSpecialColumnManagerController.m; sourceTree = "<group>"; };
 		44795CB51A31598A0085A570 /* SPSpecialColumnManagerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSpecialColumnManagerTableViewController.h; path = SpecialColumn/SPSpecialColumnManagerTableViewController.h; sourceTree = "<group>"; };
 		44795CB61A31598A0085A570 /* SPSpecialColumnManagerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSpecialColumnManagerTableViewController.m; path = SpecialColumn/SPSpecialColumnManagerTableViewController.m; sourceTree = "<group>"; };
-		44795CBB1A3159BD0085A570 /* SPSpecialColumnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSpecialColumnCell.h; sourceTree = "<group>"; };
-		44795CBC1A3159BD0085A570 /* SPSpecialColumnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSpecialColumnCell.m; sourceTree = "<group>"; };
-		44795CBE1A3159EA0085A570 /* SPSpecialColumnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPSpecialColumnCell.xib; sourceTree = "<group>"; };
 		44795CC21A3160180085A570 /* SPSpecialColumnActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSpecialColumnActionCell.h; path = SpecialColumn/SPSpecialColumnActionCell.h; sourceTree = "<group>"; };
 		44795CC31A3160180085A570 /* SPSpecialColumnActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSpecialColumnActionCell.m; path = SpecialColumn/SPSpecialColumnActionCell.m; sourceTree = "<group>"; };
 		44795CC41A3160180085A570 /* SPSpecialColumnActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SPSpecialColumnActionCell.xib; path = SpecialColumn/SPSpecialColumnActionCell.xib; sourceTree = "<group>"; };
-		44795CC71A3195C20085A570 /* SPSpecialColumnModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSpecialColumnModule.h; sourceTree = "<group>"; };
-		44795CC81A3195C20085A570 /* SPSpecialColumnModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSpecialColumnModule.m; sourceTree = "<group>"; };
 		44795CCA1A319FA10085A570 /* SPSpecialColumnBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSpecialColumnBaseCell.h; path = SpecialColumn/SPSpecialColumnBaseCell.h; sourceTree = "<group>"; };
 		44795CCB1A319FA10085A570 /* SPSpecialColumnBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSpecialColumnBaseCell.m; path = SpecialColumn/SPSpecialColumnBaseCell.m; sourceTree = "<group>"; };
 		44795CCC1A319FA10085A570 /* SPSpecialColumnBaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SPSpecialColumnBaseCell.xib; path = SpecialColumn/SPSpecialColumnBaseCell.xib; sourceTree = "<group>"; };
@@ -163,6 +158,11 @@
 		44795CEC1A31A9620085A570 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		44795CED1A31A9620085A570 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		44795CEE1A31A9620085A570 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		44795CFD1A31BFF10085A570 /* SPSpecialColumnModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSpecialColumnModule.h; path = SpecialColumn/SPSpecialColumnModule.h; sourceTree = "<group>"; };
+		44795CFE1A31BFF10085A570 /* SPSpecialColumnModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSpecialColumnModule.m; path = SpecialColumn/SPSpecialColumnModule.m; sourceTree = "<group>"; };
+		44795D001A31C0080085A570 /* SPSpecialColumnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSpecialColumnCell.h; path = SpecialColumn/SPSpecialColumnCell.h; sourceTree = "<group>"; };
+		44795D011A31C0080085A570 /* SPSpecialColumnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSpecialColumnCell.m; path = SpecialColumn/SPSpecialColumnCell.m; sourceTree = "<group>"; };
+		44795D021A31C0080085A570 /* SPSpecialColumnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SPSpecialColumnCell.xib; path = SpecialColumn/SPSpecialColumnCell.xib; sourceTree = "<group>"; };
 		447A46E21A242A8100F5570F /* SPAWViewController+ArticleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPAWViewController+ArticleData.h"; sourceTree = "<group>"; };
 		447A46E31A242A8100F5570F /* SPAWViewController+ArticleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SPAWViewController+ArticleData.m"; sourceTree = "<group>"; };
 		447A46E51A246C0600F5570F /* themeImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = themeImage.jpg; sourceTree = "<group>"; };
@@ -305,17 +305,17 @@
 				44795CB41A31598A0085A570 /* SPSpecialColumnManagerController.m */,
 				44795CB51A31598A0085A570 /* SPSpecialColumnManagerTableViewController.h */,
 				44795CB61A31598A0085A570 /* SPSpecialColumnManagerTableViewController.m */,
-				44795CC71A3195C20085A570 /* SPSpecialColumnModule.h */,
-				44795CC81A3195C20085A570 /* SPSpecialColumnModule.m */,
 				44795CCA1A319FA10085A570 /* SPSpecialColumnBaseCell.h */,
 				44795CCB1A319FA10085A570 /* SPSpecialColumnBaseCell.m */,
 				44795CCC1A319FA10085A570 /* SPSpecialColumnBaseCell.xib */,
-				44795CBB1A3159BD0085A570 /* SPSpecialColumnCell.h */,
-				44795CBC1A3159BD0085A570 /* SPSpecialColumnCell.m */,
-				44795CBE1A3159EA0085A570 /* SPSpecialColumnCell.xib */,
 				44795CC21A3160180085A570 /* SPSpecialColumnActionCell.h */,
 				44795CC31A3160180085A570 /* SPSpecialColumnActionCell.m */,
 				44795CC41A3160180085A570 /* SPSpecialColumnActionCell.xib */,
+				44795D001A31C0080085A570 /* SPSpecialColumnCell.h */,
+				44795D011A31C0080085A570 /* SPSpecialColumnCell.m */,
+				44795D021A31C0080085A570 /* SPSpecialColumnCell.xib */,
+				44795CFD1A31BFF10085A570 /* SPSpecialColumnModule.h */,
+				44795CFE1A31BFF10085A570 /* SPSpecialColumnModule.m */,
 			);
 			name = SpecialColumn;
 			sourceTree = "<group>";
@@ -685,12 +685,12 @@
 				445A17A41A1F3F610031CD37 /* ArticleTitleTableViewCell.xib in Resources */,
 				44942EDC1A1C75BB00281332 /* LaunchScreen.xib in Resources */,
 				44942ED91A1C75BB00281332 /* Images.xcassets in Resources */,
+				44795D041A31C0080085A570 /* SPSpecialColumnCell.xib in Resources */,
 				44795CC61A3160180085A570 /* SPSpecialColumnActionCell.xib in Resources */,
 				44A4B09E1A1DC1D2007C6451 /* VideoCommentTableViewCell.xib in Resources */,
 				44A4B0A21A1DC1D2007C6451 /* VideoHeadTitleTableViewCell.xib in Resources */,
 				44A4B0D61A1DCEDC007C6451 /* html2canvas.js in Resources */,
 				44A4B0D41A1DCEDC007C6451 /* Article.html in Resources */,
-				44795CBF1A3159EA0085A570 /* SPSpecialColumnCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,10 +710,10 @@
 			files = (
 				44A4B09B1A1DC1D2007C6451 /* VideoBaseTableViewCell.m in Sources */,
 				44A4B1491A1DD6A2007C6451 /* ASIDataDecompressor.m in Sources */,
+				44795D031A31C0080085A570 /* SPSpecialColumnCell.m in Sources */,
 				44A4B0A31A1DC1D2007C6451 /* VideoRelatedTableViewCell.m in Sources */,
 				44795CF51A31A9620085A570 /* SDWebImageDownloaderOperation.m in Sources */,
 				44A4B1481A1DD6A2007C6451 /* ASIDataCompressor.m in Sources */,
-				44795CBD1A3159BD0085A570 /* SPSpecialColumnCell.m in Sources */,
 				44795CB81A31598A0085A570 /* SPSpecialColumnListTableViewController.m in Sources */,
 				44795CC51A3160180085A570 /* SPSpecialColumnActionCell.m in Sources */,
 				44A4B1661A1DD6A2007C6451 /* NSString+URLEncode.m in Sources */,
@@ -750,6 +750,7 @@
 				44A4B09F1A1DC1D2007C6451 /* VideoDetailTableViewCell.m in Sources */,
 				44A4B09D1A1DC1D2007C6451 /* VideoCommentTableViewCell.m in Sources */,
 				44A4B1511A1DD6A2007C6451 /* SPDataRequest.m in Sources */,
+				44795CFF1A31BFF10085A570 /* SPSpecialColumnModule.m in Sources */,
 				44795CFC1A31A9620085A570 /* UIImageView+WebCache.m in Sources */,
 				44A4B1501A1DD6A2007C6451 /* SPBaseDataRequest.m in Sources */,
 				44A4B1811A1DF570007C6451 /* ArticleWebViewTableViewCell.m in Sources */,
@@ -765,7 +766,6 @@
 				44A4B14A1A1DD6A2007C6451 /* ASIDownloadCache.m in Sources */,
 				44795CF91A31A9620085A570 /* UIImage+GIF.m in Sources */,
 				44A4B0CA1A1DC28B007C6451 /* VideoArticleTableViewController.m in Sources */,
-				44795CC91A3195C20085A570 /* SPSpecialColumnModule.m in Sources */,
 				44A4B14C1A1DD6A2007C6451 /* ASIHTTPRequest.m in Sources */,
 				44A4B0DC1A1DD153007C6451 /* SPAWViewController.m in Sources */,
 				44A4B1521A1DD6A2007C6451 /* SPRequestResult.m in Sources */,
