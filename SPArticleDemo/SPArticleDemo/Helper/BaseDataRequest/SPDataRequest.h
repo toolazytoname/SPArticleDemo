@@ -24,3 +24,11 @@
 @interface SPHotCommentDataRequest : SPBaseDataRequest
 
 @end
+
+/**
+ *  获取专栏列表
+ */
+#define SPSpecialColumnKey @"SPSpecialColumnKey"
+@interface SPSpecialColumnDataRequest : SPBaseDataRequest
+
+@end

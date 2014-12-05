@@ -203,6 +203,24 @@
             </objects>
             <point key="canvasLocation" x="1818" y="2806"/>
         </scene>
+        <!--专栏-->
+        <scene sceneID="v9L-2M-yV0">
+            <objects>
+                <viewController title="专栏" id="2aH-3Y-KZU" customClass="SPSpecialColumnListController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TFt-sZ-UWX"/>
+                        <viewControllerLayoutGuide type="bottom" id="dp3-Ud-dwO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mOd-We-Eo8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grN-TS-xHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843" y="2115"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="VlY-Ez-rpa">
             <objects>
@@ -278,6 +296,15 @@
                                 </state>
                                 <connections>
                                     <segue destination="mLU-gM-mx3" kind="show" identifier="ArticleWithTheme" id="SEQ-cx-0ay"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtv-tz-AUh">
+                                <rect key="frame" x="245" y="450" width="60" height="30"/>
+                                <state key="normal" title="专栏列表">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2aH-3Y-KZU" kind="show" id="oK5-uR-dzz"/>
                                 </connections>
                             </button>
                         </subviews>

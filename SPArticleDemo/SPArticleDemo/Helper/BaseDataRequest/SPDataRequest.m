@@ -65,3 +65,39 @@
 }
 
 @end
+
+
+@implementation SPSpecialColumnDataRequest:SPBaseDataRequest
+
+-(NSString *)getURL
+{
+    return @"http://platform.sina.com.cn/sports_client/z_list?app_key=2586208540";
+}
+
+-(SPHTTPRequestMethod)getHttpRequestMethod
+{
+    return SPHTTPRequestMethodGET;
+}
+
+-(void)dataProcess
+{
+    [super dataProcess];
+    if (self.resultDataDic && [self.resultDataDic isKindOfClass:[NSDictionary class]]) {
+        id result = [self.resultDataDic objectForKeyNotNull:@"result"];
+        if (result && [result isKindOfClass:[NSDictionary class]]) {
+            id data = [result objectForKey:@"data"];
+            if (data && [data isKindOfClass:[NSDictionary class]]) {
+                id list = [data objectForKeyNotNull:@"list"];
+                if (list && [list isKindOfClass:[NSArray class]]) {
+                    NSArray *listData = [SPSpecialColumnModule modelsWithDicArray:list];
+                    self.resultDataDic = [NSMutableDictionary dictionaryWithObject:listData forKey:SPSpecialColumnKey];
+                }
+                
+            }
+        }
+    }
+    
+}
+
+
+@end
