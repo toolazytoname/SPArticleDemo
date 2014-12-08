@@ -32,3 +32,12 @@
 @interface SPSpecialColumnDataRequest : SPBaseDataRequest
 
 @end
+
+/**
+ *  专栏 订阅
+ */
+#define SPSpecialColumnSubscribeKey
+@interface SPSpecialColumnSubscribeDataRequest : SPBaseDataRequest
+
+@end
+

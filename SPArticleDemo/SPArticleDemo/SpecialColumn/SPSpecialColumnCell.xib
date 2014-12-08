@@ -66,7 +66,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="countLabel" destination="kYU-6k-Q2N" id="HKn-fc-cpO"/>
-                <outlet property="image" destination="0dn-b7-I27" id="e5M-ga-nz9"/>
+                <outlet property="iconImage" destination="0dn-b7-I27" id="vRJ-MN-7qP"/>
                 <outlet property="mainTitleLabel" destination="YzF-di-9et" id="km1-FQ-fq2"/>
                 <outlet property="subTitleLabel" destination="skl-JW-vSG" id="5l0-Zh-CZU"/>
             </connections>

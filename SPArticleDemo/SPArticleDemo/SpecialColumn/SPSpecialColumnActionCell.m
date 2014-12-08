@@ -7,21 +7,37 @@
 //
 
 #import "SPSpecialColumnActionCell.h"
+#import "SPSpecialColumnModule.h"
+#import "UIImageView+WebCache.h"
+#import "UIView+ITTAdditions.h"
+
 @interface SPSpecialColumnActionCell()
+@property (strong, nonatomic) IBOutlet UIImageView *iconImage;
+@property (strong, nonatomic) IBOutlet UILabel *mainTitleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *subTitleLabel;
+@property (strong, nonatomic) IBOutlet UIButton *specialColumnButton;
 
 @end
 @implementation SPSpecialColumnActionCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 -(void)updateCellWithModule:(id)module
-{}
+{
+    if (module && [module isKindOfClass:[SPSpecialColumnModule class]]) {
+        SPSpecialColumnModule *specialColumnModule = (SPSpecialColumnModule *)module;
+        [self.iconImage setImageWithURL:[NSURL URLWithString:specialColumnModule.pic]];
+        self.iconImage.layer.masksToBounds = YES;
+        self.iconImage.layer.cornerRadius = self.iconImage.width/2;
+        self.mainTitleLabel.text = specialColumnModule.title;
+        self.subTitleLabel.text = specialColumnModule.desc;
+        
+        
+    }
+}
+
+
+
++(CGFloat)getCellHeight
+{
+    return 70.0f;
+}
 @end

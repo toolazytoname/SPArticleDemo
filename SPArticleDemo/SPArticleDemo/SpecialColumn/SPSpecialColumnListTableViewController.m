@@ -10,6 +10,8 @@
 #import "SPSpecialColumnBaseCell.h"
 #import "SPSpecialColumnCell.h"
 #import "SPSpecialColumnActionCell.h"
+#import "SPSpecialColumnHeaderView.h"
+
 static NSString  *SPSpecialColumnCellIdeftifier = @"SPSpecialColumnCellIdeftifier";
 static NSString  *SPSpecialColumnActionCellIdeftifier = @"SPSpecialColumnActionCellIdeftifier";
 
@@ -65,9 +67,35 @@ static NSString  *SPSpecialColumnActionCellIdeftifier = @"SPSpecialColumnActionC
     }
     else if(1 == indexPath.section)
     {
-//        count = self.recommendListData.count;
+        height = [SPSpecialColumnActionCell getCellHeight];
     }
     return height;
+}
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *title = @"";
+    if (0 == section) {
+        return nil;
+    }
+    else if (1 == section) {
+        title = @"热门推荐";
+    }
+    SPSpecialColumnHeaderView *specialColumnHeaderView = [[SPSpecialColumnHeaderView alloc] initWithFrame:CGRectZero];
+    [specialColumnHeaderView setHeaderTitle:title];
+    return specialColumnHeaderView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    CGFloat height;
+    if (0 == section) {
+        height = 0.0f;
+    }
+    else if(1 == section)
+    {
+        height = [SPSpecialColumnHeaderView getHeaderViewHeight];
+    }
+    return height;
 }
 @end

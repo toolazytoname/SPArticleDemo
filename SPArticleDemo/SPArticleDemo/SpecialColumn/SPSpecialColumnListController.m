@@ -26,6 +26,10 @@
 {
     [self addRequest:[SPSpecialColumnDataRequest requestWithDelegate:self parameters:nil isUseCache:YES]];
 }
+-(void)requestSubScribe
+{
+    
+}
 
 - (void)requestDidStartLoad:(BaseDataRequest*)request
 {}
@@ -33,9 +37,22 @@
 {
     NSArray *list = [request.resultDataDic objectForKeyNotNull:SPSpecialColumnKey];
     self.specialColumnListTableViewController.subscribeListData = list;
+    self.specialColumnListTableViewController.recommendListData = list;
     [self.specialColumnListTableViewController.tableView reloadData];
 }
 - (void)request:(BaseDataRequest*)request didFailLoadWithError:(NSError*)error
 {}
 
+
+/**
+ *  订阅
+ */
+-(void)subscribe
+{}
+
+/**
+ *  退订
+ */
+-(void)unSubscribe
+{}
 @end

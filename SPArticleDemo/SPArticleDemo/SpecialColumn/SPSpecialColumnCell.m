@@ -13,7 +13,7 @@
 
 
 @interface SPSpecialColumnCell()
-@property (strong, nonatomic) IBOutlet UIImageView *image;
+@property (strong, nonatomic) IBOutlet UIImageView *iconImage;
 @property (strong, nonatomic) IBOutlet UILabel *mainTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *subTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *countLabel;
@@ -27,9 +27,9 @@
 {
     if (module && [module isKindOfClass:[SPSpecialColumnModule class]]) {
         SPSpecialColumnModule *specialColumnModule = (SPSpecialColumnModule *)module;
-        [self.image setImageWithURL:[NSURL URLWithString:specialColumnModule.pic]];
-        self.image.layer.masksToBounds = YES;
-        self.image.layer.cornerRadius = self.image.width/2;
+        [self.iconImage setImageWithURL:[NSURL URLWithString:specialColumnModule.pic]];
+        self.iconImage.layer.masksToBounds = YES;
+        self.iconImage.layer.cornerRadius = self.iconImage.width/2;
         self.mainTitleLabel.text = specialColumnModule.title;
         self.subTitleLabel.text = specialColumnModule.desc;
         self.countLabel.text = [NSString stringWithFormat:@"%i", (int)specialColumnModule.fansNum];
