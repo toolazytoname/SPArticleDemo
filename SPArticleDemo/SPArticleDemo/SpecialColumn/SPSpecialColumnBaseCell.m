@@ -27,4 +27,11 @@
     return self;
 }
 
+-(void)updateCellWithModule:(id)module
+{}
++(CGFloat)getCellHeight
+{
+    return 0.0;
+}
+
 @end

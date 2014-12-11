@@ -7,7 +7,7 @@
 //
 
 #import "SPSpecialColumnActionCell.h"
-#import "SPSpecialColumnModule.h"
+#import "SPSpecialColumnModel.h"
 #import "UIImageView+WebCache.h"
 #import "UIView+ITTAdditions.h"
 
@@ -22,8 +22,8 @@
 
 -(void)updateCellWithModule:(id)module
 {
-    if (module && [module isKindOfClass:[SPSpecialColumnModule class]]) {
-        SPSpecialColumnModule *specialColumnModule = (SPSpecialColumnModule *)module;
+    if (module && [module isKindOfClass:[SPSpecialColumnModel class]]) {
+        SPSpecialColumnModel *specialColumnModule = (SPSpecialColumnModel *)module;
         [self.iconImage setImageWithURL:[NSURL URLWithString:specialColumnModule.pic]];
         self.iconImage.layer.masksToBounds = YES;
         self.iconImage.layer.cornerRadius = self.iconImage.width/2;

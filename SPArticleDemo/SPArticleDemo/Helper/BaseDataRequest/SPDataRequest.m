@@ -67,7 +67,12 @@
 @end
 
 
-@implementation SPSpecialColumnDataRequest:SPBaseDataRequest
+
+
+
+
+
+@implementation SPSubscribeSpecialColumnDataRequest:SPBaseDataRequest
 
 -(NSString *)getURL
 {
@@ -89,8 +94,42 @@
             if (data && [data isKindOfClass:[NSDictionary class]]) {
                 id list = [data objectForKeyNotNull:@"list"];
                 if (list && [list isKindOfClass:[NSArray class]]) {
-                    NSArray *listData = [SPSpecialColumnModule modelsWithDicArray:list];
-                    self.resultDataDic = [NSMutableDictionary dictionaryWithObject:listData forKey:SPSpecialColumnKey];
+                    NSArray *listData = [SPSpecialColumnModel modelsWithDicArray:list];
+                    self.resultDataDic = [NSMutableDictionary dictionaryWithObject:listData forKey:SPSubscribeSpecialColumnKey];
+                }
+                
+            }
+        }
+    }
+    
+}
+@end
+
+
+@implementation SPRecommendSpecialColumnDataRequest:SPBaseDataRequest
+
+-(NSString *)getURL
+{
+    return @"http://platform.sina.com.cn/sports_client/z_list?app_key=2586208540";
+}
+
+-(SPHTTPRequestMethod)getHttpRequestMethod
+{
+    return SPHTTPRequestMethodGET;
+}
+
+-(void)dataProcess
+{
+    [super dataProcess];
+    if (self.resultDataDic && [self.resultDataDic isKindOfClass:[NSDictionary class]]) {
+        id result = [self.resultDataDic objectForKeyNotNull:@"result"];
+        if (result && [result isKindOfClass:[NSDictionary class]]) {
+            id data = [result objectForKey:@"data"];
+            if (data && [data isKindOfClass:[NSDictionary class]]) {
+                id list = [data objectForKeyNotNull:@"list"];
+                if (list && [list isKindOfClass:[NSArray class]]) {
+                    NSArray *listData = [SPSpecialColumnModel modelsWithDicArray:list];
+                    self.resultDataDic = [NSMutableDictionary dictionaryWithObject:listData forKey:SPRecommendSpecialColumnKey];
                 }
                 
             }
@@ -99,5 +138,151 @@
     
 }
 
+@end
+
+
+
+@implementation SPManagerSpecialColumnDataRequest:SPBaseDataRequest
+
+-(NSString *)getURL
+{
+    return @"https:";
+}
+
+-(SPHTTPRequestMethod)getHttpRequestMethod
+{
+    return SPHTTPRequestMethodGET;
+}
+
+-(void)dataProcess
+{
+    [super dataProcess];
+    if (self.resultDataDic && [self.resultDataDic isKindOfClass:[NSDictionary class]]) {
+        id result = [self.resultDataDic objectForKeyNotNull:@"result"];
+        if (result && [result isKindOfClass:[NSDictionary class]]) {
+            id data = [result objectForKey:@"data"];
+            if (data && [data isKindOfClass:[NSDictionary class]]) {
+                id list = [data objectForKeyNotNull:@"list"];
+                if (list && [list isKindOfClass:[NSArray class]]) {
+                    NSArray *listData = [SPSpecialColumnModel modelsWithDicArray:list];
+                    self.resultDataDic = [NSMutableDictionary dictionaryWithObject:listData forKey:SPManagerSpecialColumnKey];
+                }
+                
+            }
+        }
+    }
+    
+}
+@end
+
+
+
+
+@implementation SPSubscribeSpecialColumnActionRequest:SPBaseDataRequest
+
+-(NSString *)getURL
+{
+    return @"http://";
+}
+
+-(SPHTTPRequestMethod)getHttpRequestMethod
+{
+    return SPHTTPRequestMethodGET;
+}
+
+-(void)dataProcess
+{
+    [super dataProcess];
+    if (self.resultDataDic && [self.resultDataDic isKindOfClass:[NSDictionary class]]) {
+        id result = [self.resultDataDic objectForKeyNotNull:@"result"];
+        if (result && [result isKindOfClass:[NSDictionary class]]) {
+            id data = [result objectForKey:@"data"];
+            if (data && [data isKindOfClass:[NSDictionary class]]) {
+                //                id list = [data objectForKeyNotNull:@"list"];
+                //                if (list && [list isKindOfClass:[NSArray class]]) {
+                //                    NSArray *listData = [SPSpecialColumnModel modelsWithDicArray:list];
+                //                    self.resultDataDic = [NSMutableDictionary dictionaryWithObject:listData forKey:SPSubscribeSpecialColumnActionKey];
+                //                }
+                //                
+            }
+        }
+    }
+    
+}
+
 
 @end
+
+
+
+@implementation SPSubscribeSpecialColumnAddCountActionRequest:SPBaseDataRequest
+
+-(NSString *)getURL
+{
+    return @"http://";
+}
+
+-(SPHTTPRequestMethod)getHttpRequestMethod
+{
+    return SPHTTPRequestMethodGET;
+}
+
+-(void)dataProcess
+{
+    [super dataProcess];
+    if (self.resultDataDic && [self.resultDataDic isKindOfClass:[NSDictionary class]]) {
+        id result = [self.resultDataDic objectForKeyNotNull:@"result"];
+        if (result && [result isKindOfClass:[NSDictionary class]]) {
+            id data = [result objectForKey:@"data"];
+            if (data && [data isKindOfClass:[NSDictionary class]]) {
+                //                id list = [data objectForKeyNotNull:@"list"];
+                //                if (list && [list isKindOfClass:[NSArray class]]) {
+                //                    NSArray *listData = [SPSpecialColumnModel modelsWithDicArray:list];
+                //                    self.resultDataDic = [NSMutableDictionary dictionaryWithObject:listData forKey:SPSubscribeSpecialColumnAddCountActionKey];
+                //                }
+                //                
+            }
+        }
+    }
+    
+}
+@end
+
+
+@implementation SPSpecialColumnSyncLocalToServerDataRequest:SPBaseDataRequest
+
+-(NSString *)getURL
+{
+    return @"http://";
+}
+
+-(SPHTTPRequestMethod)getHttpRequestMethod
+{
+    return SPHTTPRequestMethodGET;
+}
+
+-(void)dataProcess
+{
+    [super dataProcess];
+    if (self.resultDataDic && [self.resultDataDic isKindOfClass:[NSDictionary class]]) {
+        id result = [self.resultDataDic objectForKeyNotNull:@"result"];
+        if (result && [result isKindOfClass:[NSDictionary class]]) {
+            id data = [result objectForKey:@"data"];
+            if (data && [data isKindOfClass:[NSDictionary class]]) {
+//                id list = [data objectForKeyNotNull:@"list"];
+//                if (list && [list isKindOfClass:[NSArray class]]) {
+//                    NSArray *listData = [SPSpecialColumnModel modelsWithDicArray:list];
+//                    self.resultDataDic = [NSMutableDictionary dictionaryWithObject:listData forKey:SPSpecialColumnKey];
+//                }
+//                
+            }
+        }
+    }
+    
+}
+@end
+
+
+
+
+

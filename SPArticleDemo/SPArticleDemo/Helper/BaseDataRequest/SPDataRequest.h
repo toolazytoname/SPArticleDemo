@@ -26,18 +26,54 @@
 @end
 
 /**
- *  获取专栏列表
+ *  获取 订阅专栏列表
  */
-#define SPSpecialColumnKey @"SPSpecialColumnKey"
-@interface SPSpecialColumnDataRequest : SPBaseDataRequest
+#define SPSubscribeSpecialColumnKey @"SPSubscribeSpecialColumnKey"
+@interface SPSubscribeSpecialColumnDataRequest : SPBaseDataRequest
 
 @end
 
 /**
- *  专栏 订阅
+ *  获取 推荐专栏列表
  */
-#define SPSpecialColumnSubscribeKey
-@interface SPSpecialColumnSubscribeDataRequest : SPBaseDataRequest
+#define  SPRecommendSpecialColumnKey @"SPRecommendSpecialColumnKey"
+@interface SPRecommendSpecialColumnDataRequest : SPBaseDataRequest
 
 @end
+
+/**
+ *  获取 专栏列表
+ */
+#define  SPManagerSpecialColumnKey @"SPManagerSpecialColumnKey"
+@interface SPManagerSpecialColumnDataRequest : SPBaseDataRequest
+
+@end
+
+
+
+
+/**
+ *  专栏 订阅操作
+ */
+#define SPSubscribeSpecialColumnActionKey @"SPSubscribeSpecialColumnActionKey"
+@interface SPSubscribeSpecialColumnActionRequest : SPBaseDataRequest
+
+@end
+
+/**
+ *  专栏 订阅增加计数操作
+ */
+#define SPSubscribeSpecialColumnAddCountActionKey @"SPSubscribeSpecialColumnAddCountActionKey"
+@interface SPSubscribeSpecialColumnAddCountActionRequest : SPBaseDataRequest
+
+@end
+
+/**
+ *  专栏，同步到
+ */
+#define SPSpecialColumnSyncLocalToServerKey @"SPSpecialColumnSyncLocalToServerKey"
+@interface SPSpecialColumnSyncLocalToServerDataRequest :SPBaseDataRequest
+
+@end
+
 
